@@ -1,12 +1,22 @@
 import React from 'react';
-import MoodSelector from './MoodSelector';
-
+import MoodSelector from './MoodSelector.js';
+import { Container, Row, Col } from'react-bootstrap';
 const App = () => {
+
   return (
-      <div>
+      /*<div>
         <h1>Sélection de l'Humeur</h1>
         <MoodSelector />
-      </div>
+      </div>*/
+
+    <Container>
+        <Row>
+            <Col className="text-center" md={{offset: 3, span: 6}}>
+                <h1>Sélection de l'Humeur</h1>
+                <MoodSelector/>
+            </Col>
+        </Row>
+    </Container>
   );
 };
 

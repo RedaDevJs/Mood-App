@@ -14,7 +14,7 @@ const MoodSelector = () => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container">
             {submitted ? (
                 <div>
                     <p>Merci pour votre humeur!</p>
@@ -22,7 +22,7 @@ const MoodSelector = () => {
             ) : (
                 <div>
                     <h2 className="text-2xl font-bold mb-4">Sélectionnez votre humeur</h2>
-                    <div className="flex space-x-4">
+                    <div className="space-x-4 text-center">
                         <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={() => handleMoodSelection('heureux')}>
                             😊 Heureux
                         </button>
