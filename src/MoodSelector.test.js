@@ -9,6 +9,16 @@ describe('MoodSelector Component', () => {
         expect(screen.getByText('Sélectionnez votre humeur')).toBeInTheDocument();
     });
 
+
+
+    it('should display confirmation message after submission', async () => {
+        render(<MoodSelector />);
+        const submitButton = screen.getByText('Soumettre');
+
+        fireEvent.click(submitButton);
+
+        await screen.findByText('Merci pour votre humeur!');
+    });
     it('should select mood when button is clicked', () => {
         render(<MoodSelector />);
         const happyButton = screen.getByText('😊 Heureux');
@@ -29,14 +39,4 @@ describe('MoodSelector Component', () => {
 
         await waitFor(() => expect(handleSubmit).toHaveBeenCalledWith('heureux'));
     });
-
-    it('should display confirmation message after submission', async () => {
-        render(<MoodSelector />);
-        const submitButton = screen.getByText('Soumettre');
-
-        fireEvent.click(submitButton);
-
-        await screen.findByText('Merci pour votre humeur!');
-    });
-
 });

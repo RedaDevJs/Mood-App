@@ -14,26 +14,26 @@ const MoodSelector = () => {
     };
 
     return (
-        <div>
+        <div className="container mx-auto">
             {submitted ? (
                 <div>
                     <p>Merci pour votre humeur!</p>
                 </div>
             ) : (
                 <div>
-                    <h2>Sélectionnez votre humeur</h2>
-                    <div>
-                        <button onClick={() => handleMoodSelection('heureux')}>
+                    <h2 className="text-2xl font-bold mb-4">Sélectionnez votre humeur</h2>
+                    <div className="flex space-x-4">
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={() => handleMoodSelection('heureux')}>
                             😊 Heureux
                         </button>
-                        <button onClick={() => handleMoodSelection('triste')}>
+                        <button className="bg-yellow-500 text-white px-4 py-2 rounded" onClick={() => handleMoodSelection('triste')}>
                             😢 Triste
                         </button>
-                        <button onClick={() => handleMoodSelection('en colère')}>
+                        <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={() => handleMoodSelection('en colère')}>
                             😡 En colère
                         </button>
                     </div>
-                    <button onClick={handleSubmit}>Soumettre</button>
+                    <button className="bg-green-500 text-white px-4 py-2 rounded mt-4" onClick={handleSubmit}>Soumettre</button>
                 </div>
             )}
         </div>
